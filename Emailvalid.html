@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .main{
+        width: 50%;
+        height: 50vh;
+        border: 1px solid white;
+        box-shadow: 2px 2px 4px blue;
+        border-radius: 15px;
+
+
+    }
+    .emailinput{
+        width:75%;
+        height: 5vh;
+        border: 1px solid black;
+        outline: none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 500;
+
+    }
+    .mydiv{ width: 100%;
+        height:5vh ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3%;
+        
+    }
+    .divbtn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2%;
+
+    }
+    .butt{
+        width: 20%;
+        height: 5vh;
+        background-color: blue;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+
+    }
+    .labbel{
+        font-size: 20px ;
+        font-weight: 500;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-right: 1%;
+    }
+    .valid{
+        font-size: 25px;
+        font-weight: 500;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin-top: 4%;
+        color: blue;
+        
+    }
+</style>
+<body>
+    <main class="main">
+        <div class="valid">Valid your Email in the provided space below </div>
+        <div class="mydiv">
+            <label class="labbel" for="">Email Address</label>
+            <input class="emailinput" type="text">
+        </div>
+        <div class="divbtn">
+            <button class="butt" onclick="validate()">Validate</button>
+        </div>
+    </main>
+</body>
+</html>
+<script>
+    let email = document.querySelector('.emailinput')
+    let main = document.querySelector('.main')
+   
+    function validate() {
+        if ((email.value.length >= 12 &&  email.value.includes('@gmail' )  && email.value.includes('.com')) || (email.value.length >= 7 &&  email.value.includes('@Yahoo' )  && email.value.includes('.com')) ) {
+            
+            alert(
+                        'Valid Email Inputed'
+                        )
+                        main.style.backgroundColor = 'aqua' 
+                     
+        } else {
+            alert(
+                        'invalid Email Inputed'
+                        )
+                        main.style.backgroundColor = 'red'
+        }
+    }
+</script>
